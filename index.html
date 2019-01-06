@@ -45,16 +45,16 @@
             <li>
                 <section class="home">
                     <ul class="home-content">
-                    <li>One layer</li>
-                    <li>Two layer</li>
-                    <li>Three layer</li>
-                    <li>Four layer</li>
+                    <li class="content-title left-show">One layer</li>
+                    <li class="content-title active right-hide">Two layer</li>
+                    <li class="content-title ">Three layer</li>
+                    <li class="content-title">Four layer</li>
                 </ul>
                     <ul class="home-point">
-                        <li>One layer</li>
-                        <li>Two layer</li>
-                        <li>Three layer</li>
-                        <li>Four layer</li>
+                        <li class="active"></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
                     </ul>
                 </section>
             </li>
@@ -152,7 +152,15 @@
                     return false;
                 }
             }
-
+ 
         }}
+    window.onresize = function () {
+        //修正小箭头的位置和ul位置
+        arrowNode.style.left = headerLisNodes[nowIndex].getBoundingClientRect().left + headerLisNodes[nowIndex].offsetWidth / 2
+            - arrowHalfWidth + 'px';
+        contentUlNode.style.top = - nowIndex * contentHeight + 'px';
+    }
+
+
 </script>
 </html>
